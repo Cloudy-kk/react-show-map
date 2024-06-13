@@ -26,6 +26,11 @@ const Button: FC<ButtonProps> = (props) => {
         className
     );
 
+    function testCheckConsole(){
+        console.log('123test111')
+    }
+    
+
     return (
         <button
             className={classes}
