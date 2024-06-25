@@ -1,0 +1,10 @@
+@import '../../config-v2/ant.less';
+.V2FormInputNoColon {
+  :global {
+    .@{ant}-form-item-required {
+      &::before {
+        display: none!important;
+      }
+    }
+  }
+}

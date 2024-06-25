@@ -1,0 +1,110 @@
+@import '../../config-v2/ant.less';
+.v2Tabs {
+  color: #222;
+  margin-bottom: 16px;
+  :global { // 设计到原有布局变更的，就写在这个组件内部
+    .@{ant}-tabs-nav {
+      margin-bottom: 0;
+    }
+  }
+  &.v2TabsCard {
+    margin-bottom: 0;
+    :global {
+      .@{ant}-tabs-nav {
+        .@{ant}-tabs-nav-wrap {
+          .@{ant}-tabs-tab {
+            padding: 9px 16px;
+            font-size: 14px;
+            margin-left: 0;
+            border: none;
+            background: #F6F7F9;
+            &.@{ant}-tabs-tab-active {
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.v2TabsFullCard {
+    margin-bottom: 0;
+    line-height: 1;
+    :global {
+      .@{ant}-tabs-nav {
+        &::before {
+          border-bottom: none;
+        }
+        .@{ant}-tabs-nav-wrap {
+          .@{ant}-tabs-nav-list {
+            .@{ant}-tabs-tab {
+              padding: 9px 16px;
+              font-size: 14px;
+              margin-left: 0;
+              border-color: #ddd;
+              border-left-width: 0;
+              background: #fff;
+              border-radius: 0;
+              box-sizing: border-box;
+              transition-duration: 0.01s;
+              &.@{ant}-tabs-tab-active {
+                background: #006AFF;
+                border-color: #006AFF;
+                border-radius: 0;
+                .@{ant}-tabs-tab-btn {
+                  color: #fff;
+                }
+              }
+              &:first-child {
+                border-radius: 4px 0 0 4px;
+                border-left-width: 1px;
+              }
+              &:nth-last-child(2) {
+                border-radius: 0 4px 4px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.v2TabsPopup {
+  :global {
+    .@{ant}-tabs-dropdown-menu-item {
+      &.@{ant}-tabs-dropdown-menu-item-active {
+        background-color: rgba(0,106,255,.06);
+      }
+    }
+  }
+}
+
+.v2CustomTabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .v2CustomTabsLeft {
+    overflow: hidden;
+    .v2CustomTabsLeftInner {
+      display: flex;
+      align-items: center;
+      .v2Tabs {
+        flex: 1;
+        overflow: hidden;
+      }
+    }
+  }
+  .v2CustomTabsRight {
+    flex: 1;
+    margin-left: 10px;
+    text-align: right;
+  }
+  :global {
+    .@{ant}-tabs {
+      .@{ant}-tabs-nav {
+        &::before {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

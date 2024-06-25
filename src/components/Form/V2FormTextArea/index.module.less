@@ -1,0 +1,32 @@
+@import '../../config-v2/ant.less';
+.V2FormTextArea {
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    background-color: #fff;
+    line-height: 14px;
+    font-size: 14px;
+    z-index: 1;
+    color: #86909C;
+    margin-bottom: 0!important;
+  }
+  &.V2FormTextAreaDisabled {
+    &::after {
+      background-color: transparent;
+    }
+    :global {
+      .@{ant}-input-affix-wrapper {
+        &:hover {
+          border-color: #ddd;
+        }
+      }
+    }
+  }
+  :global {
+    textarea {
+      height: 80px;
+    }
+  }
+}

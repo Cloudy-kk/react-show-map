@@ -1,0 +1,252 @@
+@import '../../config-v2/ant.less';
+.v2TableSelected {
+  display: flex;
+  height: 28px;
+  margin-bottom: 12px;
+  align-items: center;
+  .v2TableSelectedNum {
+    color: #006AFF;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .v2TableSelectedText {
+    padding-right: 4px;
+    font-size: 14px;
+  }
+  .v2TableSelectedBtn {
+    height: 28px;
+    padding: 2px 12px;
+    font-size: 12px;
+    margin-left: 12px;
+    &:hover {
+      background-color: #F2F3F5;
+      border-color: #ddd;
+      color: #222222;
+    }
+    :global {
+      .anticon + span {
+        margin-left: 6px;
+      }
+    }
+  }
+  :global {
+    .@{ant}-btn-primary {
+      &.v2TableSelectedBtn {
+        color: #fff;
+      }
+    }
+  }
+}
+.v2Table {
+  position: relative;
+  // 滚动条样式
+  ::-webkit-scrollbar {
+    width: 8px; // 固定滚动条宽度
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 14px;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+    background: rgba(153, 153, 153, 0.3);
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    background: rgba(238, 238, 238, 0.3);
+  }
+  ::-webkit-scrollbar-corner {
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    background: rgba(238, 238, 238, 0.3);
+  }
+  :global { // 这里会影响老的table组件布局，所以不写在 reset.less 里
+    .@{ant}-table {
+      .@{ant}-table-tbody {
+        .@{ant}-table-placeholder {
+          .@{ant}-empty {
+            padding-top: 24px;
+            padding-bottom: 36px;
+            .@{ant}-empty-image {
+              height: 120px;
+            }
+            .@{ant}-empty-description {
+              line-height: 1em;
+            }
+          }
+        }
+        .@{ant}-table-cell {
+          &.@{ant}-table-cell-row-hover {
+            .v2DetailItemValue {
+              background-color: #fff;
+            }
+          }
+        }
+      }
+      &.@{ant}-table-empty {
+        .v2ResizableDandle {
+          display: none;
+        }
+      }
+    }
+  }
+  // 自定义empty
+  &.v2TableEmptyRender {
+    :global {
+      .@{ant}-table {
+        &.@{ant}-table-empty {
+          .@{ant}-table-body {
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+  .v2TableInner {
+    position: relative;
+  }
+  .v2TableSortConfig {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 32px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border-left: 1px solid #DDDDDD;
+    background-color: #F6F7F9;
+    cursor: pointer;
+    &.v2TableSortConfigScroll {
+      width: 40px;
+    }
+  }
+  &.v2TableEasy {
+    :global { // 这里会影响老的table组件布局，所以不写在 reset.less 里
+      .@{ant}-table-wrapper{
+        .@{ant}-table {
+          .@{ant}-table-container {
+            .@{ant}-table-thead {
+              > tr {
+                > th {
+                  height: 36px;
+                  padding-top: 6.5px;
+                  padding-bottom: 6.5px;
+                }
+              }
+            }
+            .@{ant}-table-tbody {
+              > tr {
+                > td {
+                  padding-top: 8.5px;
+                  padding-bottom: 8.5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .v2TableSortConfig {
+      height: 36px;
+      line-height: 36px;
+    }
+  }
+}
+.v2TableSortConfigPop {
+  border-radius: 16px;
+}
+
+.V2Resizable {
+  position: relative;
+  background-clip: padding-box;
+  .V2ResizableDandle {
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+    z-index: 1;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+    &.V2ResizableDandleActive {
+      &::before{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        border-left: solid 1px transparent;
+      }
+    }
+  }
+}
+.V2ResizableDivider {
+  height: 100%;
+  border-left: 1px solid #ddd;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  display: none;
+}
+// 自定义empty
+.customEmpty {
+  position: absolute;
+  bottom: 1px;
+  background-color: #fff;
+  width: 100%;
+  padding-top: 36.5px;
+  padding-bottom: 48.5px;
+  margin: 0;
+  border-right: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+  :global {
+    .@{ant}-empty-image {
+      height: 120px;
+    }
+    .@{ant}-empty-description {
+      line-height: 1em;
+    }
+  }
+}
+.v2TableToolTip {
+  :global {
+    .@{ant}-tooltip-inner {
+      border-radius: 4px;
+    }
+  }
+  &.whiteStyle {
+    :global {
+      .@{ant}-tooltip-arrow-content {
+        --antd-arrow-background-color:  #fff;
+      }
+      .@{ant}-tooltip-content {
+        &::before {
+          width: 22px;
+          display: block;
+          height: 2px;
+          background-color: #fff;
+          content: '';
+          position: absolute;
+          z-index: 2;
+          left: 50%;
+          bottom: 2px;
+          transform: translateY(100%) translateX(-50%);
+        }
+      }
+      .@{ant}-tooltip-inner {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 3px 6px -4px rgba(204,204,204, 0.32), 0 6px 16px 0 rgba(204,204,204, 0.32), 0 9px 28px 8px rgba(204,204,204, 0.32);
+      }
+    }
+  }
+}
+.v2TableToolTipWrapper {
+  display: flex;
+  .v2TableRightOperateSlot {
+    .v2TableRightOperateSlotIcon {
+      margin-left: 8px;
+      font-size: 14px;
+    }
+  }
+}

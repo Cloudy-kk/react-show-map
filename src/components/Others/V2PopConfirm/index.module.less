@@ -1,0 +1,42 @@
+@import '../../config-v2/ant.less';
+.V2PopConfirm {
+  :global {
+    .ant-popover-inner {
+      border-radius: 8px;
+      .ant-popover-inner-content {
+        padding: 13px 17px 16px 13px;
+      }
+    }
+  }
+  .V2PopConfirmTitle {
+    display: flex;
+    line-height: 22px;
+    font-size: 14px;
+    color: #4E5969;
+    align-items: center;
+    margin-bottom: 12px;
+    .V2PopConfirmIcon {
+      margin-right: 7px;
+      &.V2PopConfirmIconInfo {
+        color: #006AFF;
+      }
+      &.V2PopConfirmIconError {
+        color: #F23030;
+      }
+      &.V2PopConfirmIconWarning {
+        color: #FF861D;
+      }
+      &.V2PopConfirmIconSuccess {
+        color: #67C239
+      }
+    }
+  }
+  .V2PopConfirmBtn {
+    margin-left: 41px;
+    :global {
+      .ant-btn {
+        border-radius: 3px;
+      }
+    }
+  }
+}

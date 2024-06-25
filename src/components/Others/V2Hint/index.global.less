@@ -1,0 +1,97 @@
+@import '../../config-v2/ant.less';
+.v2HintNotification {
+  &.@{ant}-notification-notice {
+    border-radius: 6px;
+    border: 1px solid transparent;
+    width: 580px;
+    &.@{ant}-notification-notice-success {
+      border-color: #E2F4D9;
+      background: #F3FBF0;
+    }
+    &.@{ant}-notification-notice-info {
+      border-color: #D8E7FF;
+      background: #EBF3FF;
+    }
+    &.@{ant}-notification-notice-warning {
+      border-color: #FFE9D7;
+      background: #FFF6ED;
+    }
+    &.@{ant}-notification-notice-error {
+      border-color: #FDD8D8;
+      background: #FEEFEF;
+    }
+    .@{ant}-notification-notice-close {
+      right: 14px;
+      line-height: 1;
+      font-size: 12px;
+    }
+    .@{ant}-notification-notice-content {
+      .@{ant}-notification-notice-message {
+        color: #222;
+        font-weight: 500;
+      }
+      .@{ant}-notification-notice-description {
+        color: #666;
+        margin-right: 36px;
+      }
+      .@{ant}-notification-notice-icon {
+        margin-left: 2px;
+        top: 18px;
+        line-height: 21px;
+        font-size: 21px;
+      }
+      .@{ant}-notification-notice-with-icon {
+        .@{ant}-notification-notice-message, .@{ant}-notification-notice-description {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+}
+.v2HintMessage {
+  &.@{ant}-message-notice {
+    .v2MessageContent {
+      color: #666;
+      .v2MessageExtra {
+        margin-left: 15px;
+      }
+      .v2MessageClose {
+        padding: 2px 0 2px 2px;
+        margin-left: 15px;
+        .anticon {
+          &.anticon-close {
+            font-size: 12px;
+            line-height: 1;
+            vertical-align: middle;
+            margin-right: 0;
+            cursor: pointer;
+            color: rgba(0,0,0,0.45);
+          }
+        }
+      }
+    }
+    .@{ant}-message-notice-content {
+      border-radius: 6px;
+      .@{ant}-message-custom-content {
+        border: 1px solid transparent;
+        border-radius: 6px;
+        &.@{ant}-message-success {
+          border-color: #E2F4D9;
+          background-color: #F3FBF0;
+        }
+        &.@{ant}-message-info {
+          border-color: #D8E7FF;
+          background-color: #EBF3FF;
+        }
+        &.@{ant}-message-warning {
+          border-color: #FFE9D7;
+          background-color: #FFF6ED;
+        }
+        &.@{ant}-message-error {
+          border-color: #FDD8D8;
+          background-color: #FEEFEF;
+        }
+      }
+    }
+  }
+}

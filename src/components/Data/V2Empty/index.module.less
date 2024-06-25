@@ -1,0 +1,26 @@
+.V2EmptyWrapper {
+  .V2Empty {
+    text-align: center;
+    .V2EmptyImage {
+      width: 140px;
+      margin-bottom: 8px;
+    }
+    .V2EmptyText {
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: normal;
+      color: #999;
+    }
+  }
+  &.V2EmptyWrapperCenter {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .V2Empty {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

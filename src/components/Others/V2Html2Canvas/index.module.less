@@ -1,0 +1,32 @@
+.V2Html2Canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1111;
+  .V2Html2CanvasOuter {
+    width: 600px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    user-select: none;
+    .V2Html2CanvasImg {
+      width: 100%;
+      display: block;
+    }
+    .V2Html2CanvasTip {
+      height: 40px;
+      line-height: 40px;
+      margin-top: 32px;
+      color: #fff;
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+}

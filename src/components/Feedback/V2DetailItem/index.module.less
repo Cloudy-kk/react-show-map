@@ -1,0 +1,374 @@
+@import '../../config-v2/ant.less';
+// 文件且单文件外显时才会有
+.v2DetailItemWrapper {
+  display: flex;
+  align-items: flex-end;
+  .v2DetailItemFilesMore {
+    line-height: 20px;
+    padding: 8px;
+    background: #F4F5F9;
+    margin-left: 8px;
+    border-radius: 4px;
+    color: #222222;
+    cursor: pointer;
+    .v2DetailItemFilesMoreFlex {
+      display: flex;
+      align-items: center;
+      .v2DetailItemFilesMoreNum {
+        margin-left: 4px;
+      }
+    }
+    &:hover {
+      background: #EEEEEE;
+    }
+  }
+}
+// 文件css，设置到两处使用
+.v2DetailItemFiles {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  .v2ItemFiles {
+    padding: 8px;
+    width: 100%;
+    background: #F6F7F9;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 8px;
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    .v2ItemFilesRight {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 22px;
+      align-items: center;
+      .v2ItemFilesName {
+        flex: 1;
+        width: 150px;
+        overflow: hidden;
+        line-height: 20px;
+        color: #222;
+        white-space: nowrap;
+        font-size: 14px;
+        font-weight: 400;
+        text-overflow:ellipsis;
+      }
+      .v2ItemFilesBtn {
+        margin-top: 1px;
+        margin-left: 6px;
+        font-size: 14px;
+        line-height: 12px;
+        color: #006AFF;
+        font-weight: 400;
+      }
+    }
+    .v2ItemFilesLeft {
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      font-size: 20px;
+      transform: translateY(-50%);
+    }
+    &.v2ItemFilesExonOneFile {
+      .v2ItemFilesBtn {
+        display: none;
+      }
+      &:hover {
+        .v2ItemFilesBtn {
+          display: block;
+        }
+      }
+    }
+  }
+}
+.v2DetailItem {
+  width: 100%;
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+  :global {
+    .@{ant}-typography {
+      margin-bottom: 0;
+      flex: 1;
+      line-height: 20px;
+      .@{ant}-typography-expand {
+        color: #006AFF;
+      }
+    }
+  }
+  .v2DetailItemLabel {
+    line-height: 20px;
+    color: #999;
+    white-space: nowrap;
+  }
+  .v2DetailItemValue {
+    line-height: 20px; // base模式下，不需要改字体大小，为了和输入框联动，需要写死，在v2DetailItemEasy下设置了 line-height:1.4
+    padding: 6px 8px;
+    margin-top: 4px;
+    background: #F4F5F9;
+    border-radius: 4px;
+    color: #222222;
+  }
+  
+  .v2DetailItemImages {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    :global {
+      .@{ant}-image {
+        img {
+          border-radius: 4px;
+          border: 1px solid #FFFFFF;
+        }
+        .@{ant}-image-mask-info {
+          .anticon {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &.v2DetailItemEasy {
+    .v2DetailItemLabel {
+      font-size: 12px;
+    }
+    .v2DetailItemValue {
+      line-height: 1.4;
+      font-size: 14px;
+      font-weight: 400;
+      background: transparent;
+      padding: 0;
+    }
+    &.v2DetailItemTypeEdit {
+      .v2DetailItemValueWrapper {
+        .v2DetailItemValueExtra {
+          height: 20px;
+        }
+      }
+    }
+  }
+  &.v2DetailItemBase {
+    .v2DetailItemFiles {
+      .v2ItemFiles {
+        background: transparent;
+        padding: 0;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .v2ItemFilesRight {
+          .v2ItemFilesName {
+            flex: 1;
+          }
+        }
+        .v2ItemFilesLeft {
+          left: 0;
+        }
+      }
+    }
+  }
+  &.v2DetailItemIsExpanded {
+    .v2DetailItemValue {
+      padding-bottom: 24px;
+    }
+  }
+  &.v2DetailItemHorizontal {
+    display: flex;
+    .v2DetailItemLabel {
+      margin-right: 8px;
+      display: inline-block;
+    }
+    &.v2DetailItemIsExpanded {
+      padding-bottom: 20px;
+    }
+  }
+  &.v2DetailItemHiddenRow2 {
+    max-height: 40px;
+    overflow: hidden;
+  }
+  &.v2DetailItemHiddenRow3 {
+    max-height: 60px;
+    overflow: hidden;
+  }
+  &.v2DetailItemTypeLink {
+    :global {
+      .@{ant}-typography {
+        cursor: pointer;
+        color: #2441B3;
+      }
+    }
+  }
+  &.v2DetailItemTypeVideos {
+    .v2DetailItemValue {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+  &.v2DetailItemTypeEdit {
+    .v2DetailItemValueWrapper {
+      position: relative;
+      padding-right: 29px;
+      .v2DetailItemValueExtra {
+        cursor: pointer;
+        position: absolute;
+        height: 32px;
+        width: 29px;
+        line-height: 1;
+        top: 0;
+        right: 0;
+        font-size: 13px;
+        color: #999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          color: #006AFF;
+        }
+      }
+    }
+    .v2DetailItemValueEdit {
+      background-color: transparent;
+      padding-right: 0;
+      .v2DetailItemEditBtn {
+        position: absolute;
+        right: 0;
+        top: 40px;
+        z-index: 1;
+        :global {
+          .@{ant}-btn {
+            color: #666666;
+            border: 1px solid #DEDEDE;
+            box-shadow: 0px 0px 4px 0px rgba(204,204,204,0.32);
+            background-color: #fff;
+            border-radius: 4px;
+            margin-left: 8px;
+          }
+        }
+        &.v2DetailItemEditBtnRightTop {
+          top: -40px
+        }
+        &.v2DetailItemEditBtnLeftTop {
+          left: 0;
+          top: -40px
+        }
+        &.v2DetailItemEditBtnLeftBottom {
+          left: 0;
+        }
+      }
+      :global {
+        .@{ant}-form-item {
+          margin-bottom: 0;
+          margin-top: 4px;
+          .@{ant}-form-item-label {
+            display: none;
+          }
+          .@{ant}-input-affix-wrapper, .@{ant}-select-selector, .@{ant}-picker, .@{ant}-input-number-input {
+            box-sizing: border-box;
+            padding-left: 7px;
+            padding-right: 7px;
+          }
+          // input
+          .@{ant}-input-affix-wrapper {
+            .@{ant}-input-suffix {
+              line-height: 1;
+              // margin-right: 1px;
+            }
+          }
+          // inputNumber
+          .@{ant}-input-number-input {
+            height: 28px;
+          }
+          // textArea
+          .@{ant}-input-textarea {
+            .@{ant}-input-affix-wrapper {
+              .@{ant}-input {
+                padding: 5px 0;
+                line-height: 20px;
+              }
+              .anticon {
+                right: 7px;
+              }
+            }
+          }
+          // select
+          .@{ant}-select {
+            .@{ant}-select-arrow, .@{ant}-select-clear {
+              right: 7px;
+            }
+          }
+          // 日期选择器,inputNumber
+          .@{ant}-picker, .@{ant}-input-number {
+            width: 100%;
+          }
+          // 日期范围选择器
+          .@{ant}-picker-range {
+            .@{ant}-picker-clear {
+              right: 7px;
+            }
+          }
+          // 复杂日期选择器
+          .@{ant}-form-item-control-input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &.v2DetailItemNoStyle {
+    margin-top: 0;
+    .v2DetailItemLabel {
+      display: none;
+    }
+    .v2DetailItemValue {
+      margin-top: 0;
+    }
+    .v2DetailItemValueWrapper {
+      :global {
+        .ant-form-item {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.v2DetailGroupBlock {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.v2DetailPackUp {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  color: #006AFF;
+  cursor: pointer;
+}
+
+.v2DomExpandWrapper {
+  overflow: hidden;
+  line-height: 20px;
+  position: relative;
+  width: 100%;
+  .v2DomExpandMore {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    line-height: 22px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, #FFFFFF 100%);
+    color: #006AFF;
+    text-align: right;
+    font-size: 14px;
+    span {
+      cursor: pointer;
+    }
+  }
+  &.v2DomExpandWrapperAuto {
+    max-height: none!important;
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+}

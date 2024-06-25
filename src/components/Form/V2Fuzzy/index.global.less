@@ -1,0 +1,39 @@
+@import '../../config-v2/ant.less';
+.v2Fuzzy {
+  &.@{ant}-select-multiple {
+    .@{ant}-select-selection-item {
+      background-color: #F6F7F9;
+      border-color: #F2F3F5;
+      border-radius: 4px;
+    }
+    .@{ant}-select-selection-item-remove {
+      font-size: 12px;
+      color: #86909C;
+      & > .anticon {
+        vertical-align: -0.2em;
+      }
+    }
+  }
+  &.@{ant}-select-show-search {
+    &.@{ant}-select-open {
+      .@{ant}-select-arrow {
+        display: none;
+      }
+    }
+  }
+}
+.v2FuzzyPopup {
+  .@{ant}-select-item-option-active:not(.@{ant}-select-item-option-disabled) {
+    background-color: rgba(0,106,255,0.06);
+  }
+  .@{ant}-select-item-option-selected:not(.@{ant}-select-item-option-disabled) {
+    background-color: transparent;
+    font-weight: normal;
+    &.@{ant}-select-item {
+      color: #006AFF;
+    }
+  }
+  .@{ant}-select-item:not(.@{ant}-select-item-option-disabled) {
+    color: #666;
+  }
+}

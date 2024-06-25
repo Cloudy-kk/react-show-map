@@ -1,0 +1,119 @@
+@import '../../config-v2/ant.less';
+.V2LogRecord {
+  .V2LogRecordDot {
+    font-size: 11px;
+    position: absolute;
+    left: -6px;
+    top: -2px;
+  }
+  &.V2LogRecordModule1, &.V2LogRecordModule2 {
+    :global {
+      .@{ant}-steps-item {
+        .@{ant}-steps-item-container {
+          .@{ant}-steps-item-icon {
+            margin-right: 11px;
+            width: 8px;
+            height: 8px;
+            top: 0;
+          }
+          .@{ant}-steps-item-tail {
+            top: 12px;
+            padding-top: 12px;
+          }
+        }
+      }
+    }
+  }
+  &.V2LogRecordModule1 {
+    .V2LogRecordTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .V2LogRecordLeft {
+        font-size: 14px;
+        color: #000;
+        font-weight: 500;
+        .V2LogRecordLeftInner {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .V2LogRecordRight {
+        font-size: 12px;
+        color: #666;
+      }
+    }
+    :global {
+      .@{ant}-steps-item {
+        .@{ant}-steps-item-container {
+          .@{ant}-steps-item-content {
+            .@{ant}-steps-item-title {
+              padding-right: 0;
+              width: 100%;
+              line-height: 34px;
+            }
+            .@{ant}-steps-item-description {
+              font-size: 14px;
+              line-height: 20px;
+              color: #222;
+              padding-bottom: 17px;
+              word-break: break-word;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &.V2LogRecordModule2 {
+    .V2LogRecordTitle {
+      display: flex;
+      color: #222;
+      font-size: 14px;
+      font-weight: 400;
+      align-items: center;
+      .V2LogRecordTime {
+        margin-right: 10px;
+        font-weight: 500;
+      }
+      .V2LogRecordName {
+        margin-right: 8px;
+        font-weight: 500;
+      }
+      .V2LogRecordContent {
+        margin-right: 8px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    .V2LogRecordDate {
+      position: absolute;
+      top: 0;
+      left: -119px;
+      color: #222;
+      font-size: 14px;
+      line-height: 32px;
+      font-weight: 500;
+    }
+    :global {
+      .@{ant}-steps-item {
+        margin-left: 101px;
+        white-space: nowrap;
+        .@{ant}-steps-item-container {
+          .@{ant}-steps-item-content {
+            min-height: 36px;
+            overflow: visible;
+            .@{ant}-steps-item-title {
+              padding-right: 0;
+              width: calc(100% - 19px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

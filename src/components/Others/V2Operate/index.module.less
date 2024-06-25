@@ -1,0 +1,72 @@
+@import '../../config-v2/ant.less';
+.V2Operate {
+  display: flex;
+  align-items: center;
+  :global {
+    .@{ant}-btn {
+      font-size: 14px;
+      margin-right: 12px;
+      padding-right: 12px;
+      padding-left: 12px;
+      &:not(.@{ant}-btn-link) {
+        border-color: #ddd;
+        color: #222;
+      }
+      &.@{ant}-btn-primary {
+        &:not(:disabled) {
+          background: #006AFF;
+          border-color: #006AFF;
+          color: #FFFFFF;
+          &:hover {
+            background: #006AFF;
+            border-color: #006AFF;
+            opacity: 0.8;
+          }
+        }
+      }
+      &.@{ant}-btn-link {
+        margin-right: 0;
+        padding-left: 0;
+        &:not(:disabled) {
+          color: #006AFF;
+        }
+        .anticon {
+          margin-left: 2px;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .V2OperateBtnDanger {
+      &:not(.@{ant}-btn-link) {
+        border-color: #F23030;
+        color: #F23030;
+      }
+      &.@{ant}-btn-primary {
+        &:not(:disabled) {
+          background: #F23030;
+          border-color: #F23030;
+          color: #FFFFFF;
+          &:hover {
+            background: #F23030;
+            border-color: #F23030;
+            opacity: 0.8;
+          }
+        }
+      }
+      &.@{ant}-btn-link {
+        &:not(:disabled) {
+          color: #F23030;
+        }
+      }
+    }
+  }
+}
+&.v2Ghost {
+  border-color: #006AFF!important;
+  color: #006AFF!important;
+}

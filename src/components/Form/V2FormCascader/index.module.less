@@ -1,0 +1,105 @@
+@import '../../config-v2/ant.less';
+@primary-color: #006AFF;
+.V2FormCascader {
+  :global {
+    .@{ant}-cascader {
+      .@{ant}-select-clear {
+        right: 12px;
+      }
+      &.@{ant}-select-multiple {
+        .@{ant}-select-selection-item {
+          background-color: #F6F7F9;
+          border-color: #F2F3F5;
+          border-radius: 4px;
+        }
+        .@{ant}-select-selection-item-remove {
+          font-size: 12px;
+          color: #86909C;
+          & > .anticon {
+            vertical-align: -0.2em;
+          }
+        }
+      }
+    }
+    .@{ant}-select-show-search {
+      &.@{ant}-select-open {
+        .@{ant}-select-arrow {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.V2FormCascaderPopup {
+  :global {
+    .@{ant}-cascader-menus {
+      .@{ant}-cascader-menu-item-active {
+        &:not(.@{ant}-cascader-menu-item-disabled) {
+          background-color: transparent;
+          // background-color: rgba(0,106,255,0.06);
+          font-weight: normal;
+          &.@{ant}-cascader-menu-item {
+            .@{ant}-cascader-menu-item-content {
+              color: @primary-color;
+            }
+          }
+        }
+      }
+      .@{ant}-cascader-menu-item:hover {
+        background-color: transparent;
+      }
+      .@{ant}-cascader-checkbox-checked {
+        .@{ant}-cascader-checkbox-inner {
+          background-color: @primary-color;
+          border-color: @primary-color;
+        }
+        &::after {
+          border-color: @primary-color;
+        }
+      }
+      .@{ant}-cascader-checkbox-indeterminate {
+        .@{ant}-cascader-checkbox-inner {
+          &::after{
+            background-color: @primary-color;
+          }
+        }
+      }
+    }
+    .@{ant}-cascader-menu-item-keyword {
+      color: @primary-color;
+    }
+  }
+  &.V2FormCascaderSingle {
+    :global {
+      .@{ant}-cascader-menu-item:not(.@{ant}-cascader-menu-item-disabled) {
+        .@{ant}-cascader-menu-item-content {
+          color: #666;
+        }
+        &:hover:not(.@{ant}-cascader-menu-item-active) {
+          background-color: rgba(0,106,255,0.06);
+        }
+      }
+    }
+  }
+  &.V2FormCascaderMultiple {
+    :global {
+      .@{ant}-cascader-menus {
+        .@{ant}-cascader-menu-item[aria-checked=true]:not(.@{ant}-cascader-menu-item-disabled) {
+          &.@{ant}-cascader-menu-item {
+            .@{ant}-cascader-menu-item-content {
+              color: @primary-color;
+            }
+          }
+        }
+        .@{ant}-cascader-menu-item[aria-checked=false]:not(.@{ant}-cascader-menu-item-disabled) {
+          .@{ant}-cascader-menu-item-content {
+            color: #666;
+          }
+          &:hover {
+            background-color: rgba(0,106,255,0.06);
+          }
+        }
+      }
+    }
+  }
+}

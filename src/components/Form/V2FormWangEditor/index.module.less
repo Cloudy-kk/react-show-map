@@ -1,0 +1,32 @@
+.V2FormWangEditor {
+  .V2FormWangEditorWrapper {
+    border: 1px solid #ddd;
+    z-index: 1;
+    width: 100%;
+    border-radius: 4px;
+    :global {
+      .w-e-toolbar {
+        border-radius: 4px 4px 0 0;
+      }
+      .w-e-text-placeholder {
+        font-style: normal;
+      }
+    }
+  }
+  &.V2FormWangEditorDisabled {
+    .V2FormWangEditorWrapper {
+      background-color: #F4F5F9;
+      :global {
+        .w-e-bar {
+          background-color: #F4F5F9;
+        }
+        .w-e-text-container {
+          .w-e-scroll {
+            background-color: #F4F5F9;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

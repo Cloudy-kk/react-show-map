@@ -1,0 +1,21 @@
+@import '../../config-v2/ant.less';
+.V2FormTreeSelect {
+  :global {
+    .@{ant}-select-multiple {
+      .@{ant}-select-selection-item-remove {
+        font-size: 12px;
+        color: #86909C;
+        & > .anticon {
+          vertical-align: -0.2em;
+        }
+      }
+    }
+    .@{ant}-select-show-search {
+      &.@{ant}-select-open {
+        .@{ant}-select-arrow {
+          display: none;
+        }
+      }
+    }
+  }
+}

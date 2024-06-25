@@ -1,0 +1,46 @@
+@import '../../config-v2/ant.less';
+.v2DragLi {
+  font-size: 14px;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #222222;
+  padding: 0 12px;
+  z-index: 10000;
+  pointer-events: auto!important;
+  &:not(.v2DragDisabled):not(.v2DragRadioChecked) {
+    &:hover {
+      background-color: #EFF0F1
+    }
+  }
+  &.v2DragRadioChecked {
+    background-color: #F3F6FC;
+    color: #006AFF;
+  }
+  &.v2DragDisabled {
+    color: #999999;
+  }
+  .@{ant}-checkbox-checked .@{ant}-checkbox-inner {
+    background-color: #026AFF;
+  }
+  .@{ant}-checkbox-disabled .@{ant}-checkbox-inner {
+    background-color: #f5f5f5;
+  }
+  &:not(.v2DragLiUnHidden) {
+    .v2DragLiIcons {
+      visibility: hidden;
+    }
+  }
+  &:not(.v2DragLiUnMove):hover {
+    .v2DragLiIcons {
+      visibility: visible;
+    }
+  }
+  
+}
+@{root}>.v2DragLi {
+  .v2DragLiIcons {
+    visibility: visible!important;
+  }
+}

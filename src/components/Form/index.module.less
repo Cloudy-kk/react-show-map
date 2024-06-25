@@ -1,0 +1,186 @@
+.formSearch {
+  margin-bottom: 10px;
+
+  .flexWrapCon {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .resetBtn {
+    margin-left: 16px;
+    border: none;
+    color: #acb4c7;
+    padding: 0;
+    svg {
+      margin-right: 8px;
+    }
+    &:hover {
+      color: #acb4c7;
+    }
+    &:active {
+      color: #acb4c7;
+    }
+  }
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 10px;
+    }
+
+    .ant-form-item-control {
+      width: @search-form-content;
+    }
+  }
+  // 可展开折叠的搜索框样式
+  &.formElasticSearch {
+    margin-bottom: 0;
+    // 调整间距是为了解决，折叠时，表单验证的红色提示语可以完整展示
+    :global {
+      .ant-form-item {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
+
+.flexBetweenCon {
+  .flex(row, nowrap, space-between);
+}
+
+.searchLabel4 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-4;
+    }
+  }
+}
+.searchLabel5 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-5;
+    }
+  }
+}
+.searchLabel6 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-6;
+    }
+  }
+}
+.searchLabel7 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-7;
+    }
+  }
+}
+.searchLabel8 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-8;
+    }
+  }
+}
+.searchLabel9 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-9;
+    }
+  }
+}
+.searchLabel10 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-10;
+    }
+  }
+}
+.searchLabel11 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-11;
+    }
+  }
+}
+.searchLabel12 {
+  :global {
+    .ant-form-item-label {
+      width: @search-form-label-12;
+    }
+  }
+}
+
+.formRange {
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// formInputNumberRange的样式
+.inputNumberRange {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum', 'tnum';
+  padding: 4px 11px 4px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e9f2;
+  border-radius: 2px;
+  transition: border 0.3s, box-shadow 0.3s;
+  .line {
+    width: 18px;
+    height: 2px;
+    display: block;
+    background-color: #f2f4f9;
+    align-items: center;
+    padding: 0 8px;
+    line-height: 1;
+  }
+  .unit {
+    height: 100%;
+    background-color: #f2f4f9;
+    font-size: 14px;
+    color: #768098;
+    padding: 4px 8px;
+  }
+
+  :global {
+    .ant-picker-input {
+      .ant-input-number-handler-wrap {
+        display: none;
+      }
+      .ant-input-number-group-addon {
+        border: none;
+        background-color: #f2f4f9;
+        font-size: 14px;
+        color: #768098;
+      }
+      &:first-of-type {
+        width: 80%;
+      }
+    }
+  }
+}
+.inputNumberRange:global(.ant-picker) {
+  padding: 0;
+}
+.inputNumber {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  :global {
+    .ant-input-number.ant-input-number {
+      border: none;
+    }
+  }
+}

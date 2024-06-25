@@ -1,0 +1,30 @@
+.V2VideoPlayer {
+  :global {
+    .video-js .vjs-duration, .vjs-no-flex .vjs-duration {
+      display: inline-block;
+    }
+    .video-js .vjs-current-time, .vjs-no-flex .vjs-current-time {
+      display: inline-block;
+    }
+  }
+  &.V2VideoPlayerYoung {
+    :global {
+      .video-js {
+        border-radius: 4px;
+        video {
+          border-radius: 4px;
+        }
+        .vjs-big-play-button {
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          margin: 0;
+          transform: translate(-50%, -50%);
+          border-radius: 100%;
+          font-size: 16px;
+          border: none;
+        }
+      }
+    }
+  }
+}

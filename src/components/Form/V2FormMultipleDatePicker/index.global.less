@@ -1,0 +1,32 @@
+@import '../../config-v2/ant.less';
+.v2MultipleDropdownClassName {
+  overflow: visible;
+  .@{ant}-picker-dropdown {
+    // top: 0 !important;
+    position: static!important;
+  }
+  .@{ant}-picker-content {
+    .@{ant}-picker-cell-in-view {
+      &.@{ant}-picker-cell-selected {
+        .@{ant}-picker-cell-inner {
+          color: rgba(0, 0, 0, 0.85);
+          background: transparent;
+        }
+      }
+      &.@{ant}-picker-cell-disabled {
+        .@{ant}-picker-cell-inner {
+          color: rgba(0, 0, 0, 0.85);
+          opacity: 0.25;
+        }
+      }
+      &.@{ant}-picker-cell-today {
+        .@{ant}-picker-cell-inner::before {
+          content: none;
+        }
+      }
+    }
+  }
+  .multipleDropdownExtraFooter {
+    font-size: 12px;
+  }
+}

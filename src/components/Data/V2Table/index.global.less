@@ -1,0 +1,86 @@
+@import '../../config-v2/ant.less';
+// 重置popover的边角
+.v2TableSortConfigPop {
+  min-width: 200px;
+  .@{ant}-popover-content {
+    transform: translate(-4px, -10px);
+  }
+  .@{ant}-popover-arrow {
+    transform: translate(8px, -100%);
+  }
+  .@{ant}-popover-inner {
+    border-radius: 16px;
+    .@{ant}-popover-inner-content {
+      padding: 4px 0 0;
+      width: 100%;
+    }
+  }
+  .v2DragList {
+    max-height: 352px; // 9条数据，和V2Table里有联动，如果有改动切记同步  ps: 搜 v2TableSortConfigDragListScroll
+    &.v2TableSortConfigDragListScroll {
+      overflow: scroll;
+    }
+  }
+  .v2TableSortConfigPopBtn {
+    margin-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 16px;
+    text-align: right;
+    .@{ant}-btn {
+      margin-left: 8px;
+      border-radius: 3px;
+      font-size: 14px;
+      border: none;
+      &.v2TableSortConfigPopSave {
+        background-color: #006AFF;
+      }
+      &.v2TableSortConfigPopReset {
+        background-color: #F4F5F7;
+        color: #132144;
+      }
+    }
+  }
+}
+.V2TableFixV2DragListTD {
+  .@{ant}-table-filter-column {
+    padding-right: 15px;
+  }
+}
+.V2TableFixV2DragListTD8px {
+  .@{ant}-table-filter-column {
+    padding-right: 23px;
+  }
+}
+.lhb-v2-table {
+  .@{ant}-table {
+    // ant-table 5.x进行了以下修复，为了避免tooltip 把数字字体宽度修正，导致的bug
+    font-variant: normal;
+    font-feature-settings: normal;
+  }
+  .lhb-v2-operate {
+    .@{ant}-btn-link {
+      height: 22px;
+      padding: 0 12px 0 0;
+    }
+  }
+  &.lhb-v2-table-performance {
+    .@{ant}-checkbox {
+      .@{ant}-checkbox-inner {
+        transition: none!important;
+        &::after {
+          transition: none!important;
+        }
+      }
+      &.@{ant}-checkbox-checked {
+        &::after {
+          animation: none!important;
+        }
+        .@{ant}-checkbox-inner {
+          &::after {
+            transition: none!important;
+          }
+        }
+      }
+    }
+  }
+}

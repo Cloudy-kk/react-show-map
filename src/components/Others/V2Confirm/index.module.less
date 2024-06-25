@@ -1,0 +1,71 @@
+@import '../../config-v2/ant.less';
+.V2Confirm {
+  :global {
+    .@{ant}-modal-content {
+      border-radius: 8px;
+      .@{ant}-modal-close {
+        top: 16px;
+        right: 22px;
+        .@{ant}-modal-close-x {
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          .anticon-close {
+            color: #86909C;;
+          }
+        }
+      }
+      .@{ant}-modal-body {
+        padding: 48px 0 16px;
+        .@{ant}-modal-confirm-body {
+          .anticon {
+            display: none;
+          }
+          .@{ant}-modal-confirm-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            line-height: 56px;
+            text-indent: 24px;
+            font-size: 20px;
+          }
+          .@{ant}-modal-confirm-content {
+            margin: 12px 0 0;
+            padding:0 24px 40px 24px;
+            border-bottom: 1px solid #f6f7f9;
+            color: #4E5969;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+        .@{ant}-modal-confirm-btns {
+          padding-right: 16px;
+          margin-top: 16px;
+          .@{ant}-btn{
+            margin: 0 0 0 12px;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+  &.V2ConfirmNoFooter {
+    :global  {
+      .@{ant}-modal-content {
+        .@{ant}-modal-body {
+          padding-bottom: 0;
+          .@{ant}-modal-confirm-body {
+            .@{ant}-modal-confirm-content {
+              border: none;
+            }
+          }
+          .@{ant}-modal-confirm-btns {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

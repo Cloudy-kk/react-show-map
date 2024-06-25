@@ -1,0 +1,11 @@
+@import '../../config-v2/ant.less';
+.v2FormRangeInput {
+  &.@{ant}-form-item-has-error {
+    .v2FormRangeInputGroup {
+      border-color: #ff4d4f;
+      &:active,&:focus-within {
+        box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+      }
+    }
+  }
+}

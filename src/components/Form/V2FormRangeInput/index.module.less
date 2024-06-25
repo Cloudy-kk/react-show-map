@@ -1,0 +1,87 @@
+@import '../../config-v2/ant.less';
+.V2FormRangeInput {
+  .V2FormRangeInputWrapper {
+    display: flex;
+  }
+  .V2FormRangeInputGroup {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    background-color: #fff;
+    &:hover {
+      border-color: #006AFF;
+    }
+    .V2FormRangeInputSingle {
+      width: 12px;
+      .V2FormRangeInputSingleBorder {
+        width: 34px;
+        height: 2px;
+        background: #666666;
+        margin: 0 auto;
+      }
+    }
+    :global { // 自己私有的
+      .@{ant}-input-number {
+        flex: 1;
+        &:hover, &.@{ant}-input-number-focused {
+          border: none;
+          box-shadow: none;
+        }
+        .@{ant}-input-number-input {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .V2FormRangeInputExtra {
+    background: #F6F7F9;
+    color: #222;
+    line-height: 30px;
+    padding: 0 11px;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    white-space: nowrap;
+  }
+  :global {
+    .@{ant}-input-group.@{ant}-input-group-compact > *:not(:last-child) {
+      margin-right: 0;
+    }
+    .@{ant}-select {
+      &:not(.@{ant}-select-customize-input) {
+        .@{ant}-select-selector {
+          background-color: #F6F7F9;
+          border: 1px solid #ddd;
+          border-left-color: #F6F7F9;
+          border-radius: 0 4px 4px 0!important;
+          color: #222;
+        }
+        &.@{ant}-select-disabled {
+          .@{ant}-select-selector {
+            background-color: #F6F7F9;
+          }
+        }
+        &:not(.@{ant}-pagination-size-changer).@{ant}-select-status-error {
+          .@{ant}-select-selector {
+            background-color: #F6F7F9;
+            border-color: #ddd!important;
+            border-left-color: #F6F7F9!important;
+            box-shadow: none!important;
+          }
+        }
+      }
+      &.@{ant}-select-in-form-item{
+        width: auto;
+      }
+    }
+  }
+  &.V2FormRangeInputDisabled {
+    .V2FormRangeInputGroup {
+      background-color: #F4F5F9;
+      &:hover {
+        border-color: #ddd;
+      }
+    }
+  }
+}

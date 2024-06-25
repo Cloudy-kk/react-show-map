@@ -1,0 +1,80 @@
+@import '../../config-v2/ant.less';
+.v2Form {
+  .@{ant}-form-item {
+    margin-bottom: 16px;
+    .@{ant}-form-item-explain {
+      font-size: 12px;
+      line-height: 1.33333;
+    }
+    .@{ant}-form-item-label {
+      > label {
+        color: #222;
+        &.@{ant}-form-item-required{
+          &:not(.@{ant}-form-item-required-mark-optional) {
+            &::before {
+              color: #F53F3F;
+            }
+          }
+        }
+      }
+    }
+    .@{ant}-input-affix-wrapper-status-error:not(.@{ant}-input-affix-wrapper-disabled):not(.@{ant}-input-affix-wrapper-borderless).@{ant}-input-affix-wrapper,
+    .@{ant}-input-affix-wrapper-status-error:not(.@{ant}-input-affix-wrapper-disabled):not(.@{ant}-input-affix-wrapper-borderless).@{ant}-input-affix-wrapper:hover {
+      border-color: #F53F3F;
+    }
+    .@{ant}-form-item-explain-error {
+      color: #F53F3F;
+    }
+  }
+  &.v2Form-vertical {
+    .@{ant}-form-item {
+      .@{ant}-form-item-label {
+        line-height: 20px;
+        padding-bottom: 4px;
+      }
+      .@{ant}-form-item-control {
+        .@{ant}-picker {
+          width: 100%;
+        }
+      }
+      &.v2FormMultipleDatePicker {
+        .@{ant}-form-item-control-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+  /* input */
+  .@{ant}-input:focus, .@{ant}-input-focused {
+    border-color: #006AFF;
+  }
+  .@{ant}-input {
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+  /* 对列表表单特殊处理 */
+  .lhb-v2-table {
+    .@{ant}-table-wrapper {
+      .@{ant}-table {
+        .@{ant}-table-container {
+          .@{ant}-table-tbody {
+            > tr {
+              > td {
+                padding: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .@{ant}-table-cell {
+      .@{ant}-typography {
+        width: 100%;
+        .@{ant}-select, .@{ant}-picker, .@{ant}-input-number {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

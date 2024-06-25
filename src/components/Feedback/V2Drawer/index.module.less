@@ -1,0 +1,28 @@
+@import '../../config-v2/ant.less';
+.v2Drawer {
+  :global {
+    .@{ant}-drawer-header {
+      padding: 0;
+      border-bottom: 0;
+      .@{ant}-drawer-header-title {
+        .@{ant}-drawer-close {
+          position: absolute;
+          top: 24px;
+          left: -32px;
+          padding: 8px;
+          border-radius: 2px 0 0 2px;
+          background-color: #F2F2F2;
+          font-size: 16px;
+          color: #666666;
+        }
+      }
+    }
+    .@{ant}-drawer-body {
+      padding: 24px 40px;
+      .@{ant}-tabs {
+        background-color: #fff;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

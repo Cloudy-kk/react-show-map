@@ -1,0 +1,30 @@
+@import '../../config-v2/ant.less';
+.V2FormSelector {
+  .V2FormSelectorItem {
+    line-height: 22px;
+    white-space: nowrap;
+    border-radius: 1px;
+    border: 1px solid #DDDDDD;
+    background: rgba(153,153,153,0.1);
+    color:  #666666;
+    font-size: 14px;
+    padding: 0 8px;
+    cursor: pointer;
+    user-select: none;
+    &.V2Disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+    &.V2Active {
+      border-color: #006AFF;
+      background: rgba(0,106,255,0.1);
+      color: #006AFF;
+      opacity: 1;
+    }
+  }
+  :global {
+    .@{ant}-space {
+      gap: 12px!important;
+    }
+  }
+}

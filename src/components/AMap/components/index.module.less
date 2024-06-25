@@ -1,0 +1,147 @@
+@import '@/common/styles/amap.less';
+
+.topSearch {
+  .mixinsPosition(absolute, 16px, auto, auto, 50%);
+  transform: translate(-50%, 0);
+  z-index: 9;
+
+  .boxCon {
+    position: absolute;
+    // left: 288px;
+    margin-left: 50px;
+  }
+}
+
+.poiSearch {
+  display: flex;
+  align-items: flex-start;
+
+  :global {
+    .ant-btn {
+      vertical-align: top;
+    }
+
+    .ant-input {
+      border: none;
+    }
+
+    .ant-input:focus {
+      border: 1px solid #2989ff;
+      box-shadow: none;
+    }
+
+    .ant-select-dropdown {
+      .poiSearchOption {
+        div {
+          .one-ellipsis();
+        }
+      }
+    }
+  }
+}
+
+.satellite {
+  .wh(110px, 32px);
+  padding: 0 12px;
+  line-height: 32px;
+  box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 0.5);
+}
+
+// 测距样式
+
+
+.toolBoxCon {
+  .iconArrow {
+    transition: 0.5s;
+    display: inline-block;
+    transform: rotate(0deg);
+  }
+
+
+  //测距工具
+  .rulerTool {
+    position: relative;
+
+    .moreRuler {
+      position: absolute;
+      left: 112px;
+      top: 0;
+      display: none;
+    }
+
+    &:hover {
+      .moreRuler {
+        transition: 0.5s;
+        display: block;
+      }
+    }
+  }
+
+  //快捷面板
+  .shortcutPanel {
+    position: absolute;
+    z-index: 2;
+    width: 186px;
+    padding: 6px 0px 12px;
+    background-color: #fff;
+
+    .shortcut {
+      font-weight: 500;
+      margin: 0 12px;
+      .flex(row, nowarp, space-between, center);
+      .text(#000, 12px, 17px, center);
+
+    }
+
+    .line {
+      width: 100%;
+      height: 1px;
+      display: block;
+      background-color: #EFF3FA;
+      margin: 6px 0 11px
+    }
+
+    .panel {
+      margin: 0 12px;
+      .flex(row, nowarp, space-between,center);
+      .text(#000, 12px, 17px, center);
+
+      .panelItem {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        .icon {
+          .wh(32px, 32px);
+          .flex(row, nowarp, center, center);
+          margin-bottom: 5px;
+          text-align: center;
+          border-radius: 2px;
+          border: 1px solid #DDDDDD;
+        }
+
+
+      }
+    }
+
+  }
+
+  .content {
+    transition: 0.5s;
+    display: none;
+  }
+
+  // &:hover{
+  //   .iconArrow {
+  //     transition: 0.5s;
+  //     display: inline-block;
+  //     transform: rotate(180deg);
+  //   }
+
+  //   .content {
+  //     transition: 0.5s;
+  //     display: block;
+
+  //   }
+  // }
+}

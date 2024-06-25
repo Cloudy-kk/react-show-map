@@ -1,0 +1,324 @@
+@import '../../config-v2/ant.less';
+.V2FormUploadCustomLabel {
+  display: flex;
+  align-items: center;
+  .V2FormUploadAnticon {
+    color: #CCCCCD;
+    margin-left: 3px;
+    margin-right: 5px;
+  }
+  .V2FormUploadTip {
+    font-size: 12px;
+    color: #999;
+    user-select: none;
+  }
+}
+/* 图片上传 */
+.V2UploadImage {
+  background-color: #F6F7F9;
+  padding: 8px 8px 0;
+  :global {
+    .@{ant}-upload-list-picture-card-container, .@{ant}-upload.@{ant}-upload-select-picture-card {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+    }
+    .@{ant}-upload-list-picture-card-container {
+      .@{ant}-image {
+        .@{ant}-image-img {
+          border-radius: 4px;
+        }
+      }
+    }
+    .@{ant}-upload.@{ant}-upload-select-picture-card{
+      border: 1px dashed #DDDDDD;
+      background: #F6F7F9;
+      color: #222;
+      &:hover {
+        border-color: #006AFF;
+      }
+    }
+    .@{ant}-upload {
+      color: #222222;
+      font-size: 14px;
+      .anticon-cloud-upload {
+        font-size: 31px;
+      }
+    }
+  }
+}
+.V2UploadImageItem {
+  position: relative;
+  height: 100%;
+  .V2UploadImageItemMask {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .3s;
+    border-radius: 4px;
+  }
+  .V2UploadImageEye {
+    position: absolute;
+    left: 50%;;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    opacity: 0;
+  }
+  .V2UploadImageCloseSpan {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 1;
+    opacity: 0;
+    padding: 3px;
+    font-size: 0;
+    cursor: pointer;
+    .V2UploadImageClose {
+      color: #ccd;
+      background-color: #fff;
+      border-radius: 100%;
+    }
+  }
+  &:hover {
+    .V2UploadImageItemMask, .V2UploadImageEye, .V2UploadImageCloseSpan {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+  .V2UploadingStatsItem {
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 0;
+    height: 100%;
+    line-height: 1;
+    text-align: center;
+    width: 48px;
+    height: 48px;
+    .V2UploadingItemProgress {
+      width: 40px;
+      font-size: 0;
+      padding-top: 19px;
+      padding-bottom: 5px;
+    }
+    .V2UploadingItemProgressTip {
+      font-size: 12px;
+      color: #006AFF;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    &.V2UploadingError {
+      .V2UploadingErrorIcon {
+        font-size: 19px;
+        padding-top: 6px;
+        padding-bottom: 5px;
+        color: #D40000;
+      }
+      .V2UploadingItemProgressTip {
+        font-size: 12px;
+        color: #F53F3F;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+  .V2UploadImageItemDone {
+    :global {
+      .@{ant}-image {
+        background-color: #fff;
+        border-radius: 4px;
+        .@{ant}-image-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    &.V2UploadImageItemRemoved {
+      :global {
+        .@{ant}-image {
+          display: none;
+        }
+      }
+      .V2UploadImageItemMask, .V2UploadImageEye {
+        opacity: 0;
+      }
+    }
+  }
+}
+/*视频上传*/
+.V2UploadImage.V2UploadVideo {
+  :global {
+    .@{ant}-upload-list-picture-card-container {
+      width: 200px;
+      height: 113px;
+    }
+  }
+}
+
+/* 文件上传 */
+.V2UploadFile, .V2UploadDragger + div {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+  padding-bottom: 5px;
+  :global {
+    .@{ant}-upload-select-text {
+      width: 100%;
+    }
+  }
+  .V2UploadFileBtn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 5px;
+    cursor: pointer;
+    user-select: none;
+    .V2UploadFileBtnMain {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #222;
+      line-height: 20px;
+      margin-bottom: 6px;
+      .V2UploadFileBtnIcon {
+        color: #006AFF;
+        margin-right: 4px;
+      }
+      .V2UploadFileBtnNum {
+        color: #666;
+        margin-left: 4px;
+      }
+    }
+    .V2UploadFileBtnTip {
+      font-size: 12px;
+      color: #666;
+      line-height: 18px;
+    }
+    &.V2UploadFileHasList {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 5px;
+      padding-bottom: 10px;
+    }
+    &.V2UploadFileDisabled {
+      cursor: not-allowed;
+      .V2UploadFileBtnMain {
+        color: #999;
+        .V2UploadFileBtnNum, .V2UploadFileBtnIcon {
+          color: #999;
+        }
+      }
+    }
+  }
+  .V2UploadingStatsItem {
+    padding: 5px 16px;
+    color: #17273A;
+    font-size: 14px;
+    .V2UploadingStatsItemWrapper {
+      .V2UploadingStatsMain {
+        display: flex;
+        line-height: 24px;
+        align-items: center;
+        width: 100%;
+        .V2UploadingStatsMainIcon {
+          font-size: 16px;
+          margin-right: 3px;
+          margin-left: 2px;
+          flex: none;
+        }
+        .V2UploadingStatsMainName {
+          flex: 1;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          padding: 0 20px 0 4px;
+        }
+        .V2UploadingStatsMainDel {
+          font-size: 14px;
+          color: #006AFF;
+          flex: none;
+          width: 19px;
+          .V2UploadingStatsMainDelIcon {
+            display: none;
+          }
+        }
+        &:hover {
+          background-color: #F3F4F5;
+          border-radius: 2px;
+          color: #2441B3;
+          .V2UploadingStatsMainDel {
+            .V2UploadingStatsMainDelIcon {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    &.V2StatusUploading {
+      margin-bottom: -11px;
+      :global {
+        .@{ant}-progress {
+          line-height: 1;
+        }
+      }
+    }
+    &.V2StatusError {
+      .V2UploadingStatsItemWrapper {
+        .V2UploadingStatsMain {
+          color: #F23030;
+          .V2UploadingStatsMainDel {
+            color: #F23030;
+            .V2UploadingStatsMainDelIcon {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    &.V2StatusDone {
+      .V2UploadingStatsItemWrapper {
+        .V2UploadingStatsMain {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.V2UploadDragger + div {
+  border-top: 0;
+}
+.V2UploadDragger.V2UploadDraggerNoFile + div {
+  padding-bottom: 0;
+  border:0;
+}
+.V2UploadImage.V2UploadFileTooMuch, .V2UploadDragger.V2UploadFileTooMuch + div {
+  :global {
+    .@{ant}-upload-list-text {
+      max-height: 175px;
+      overflow-y: scroll;
+    }
+  }
+}
+
+/* 拖拽外围 */
+.V2UploadDragWrapper {
+  :global {
+    .@{ant}-upload-draggable-list-item {
+      border-top: 2px dashed rgba(0, 0, 0, 0);
+      border-bottom: 2px dashed rgba(0, 0, 0, 0);
+    }
+    .@{ant}-upload-draggable-list-item.drop-over-downward {
+      border-bottom-color: #1890ff;
+    }
+    .@{ant}-upload-draggable-list-item.drop-over-upward {
+      border-top-color: #1890ff;
+    }
+  }
+}

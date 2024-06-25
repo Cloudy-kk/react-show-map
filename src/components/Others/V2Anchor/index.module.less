@@ -1,0 +1,36 @@
+@import '../../config-v2/ant.less';
+.V2Anchor {
+  :global {
+    .@{ant}-anchor-wrapper {
+      .@{ant}-anchor {
+        .@{ant}-anchor-ink {
+          &::before {
+            background-color: #eee;
+          }
+          .@{ant}-anchor-ink-ball {
+            display: none!important;
+          }
+        }
+        .@{ant}-anchor-link {
+          padding: 0 0 0 12px;
+          line-height: 20px;
+          margin-bottom: 16px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .@{ant}-anchor-link-title {
+            color: #999;
+            &:hover {
+              color: #006AFF;
+            }
+          }
+          &.@{ant}-anchor-link-active {
+            .@{ant}-anchor-link-title {
+              color: #006AFF;
+            }
+          }
+        }
+      }
+    }
+  }
+}
